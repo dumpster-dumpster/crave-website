@@ -5,7 +5,7 @@ import { PMREMGenerator } from 'three';
 
 // Create the scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x000000); // Black background
+scene.background = new THREE.Color(0xfff); // Black background
 
 // Create the camera
 const camera = new THREE.PerspectiveCamera(
@@ -26,7 +26,7 @@ const rgbeLoader = new RGBELoader();
 const pmremGenerator = new THREE.PMREMGenerator(renderer);
 pmremGenerator.compileEquirectangularShader();
 
-rgbeLoader.load('public/studio_small_04_4k.hdr', (texture) => {
+rgbeLoader.load('/studio_small_04_4k.hdr', (texture) => {
   const envMap = pmremGenerator.fromEquirectangular(texture).texture;
 
   // Set the environment map for the scene
