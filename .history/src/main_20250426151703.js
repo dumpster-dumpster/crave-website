@@ -19,7 +19,7 @@ camera.position.z = 5;
 // Create the renderer
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById('app').appendChild(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 
 // Load the HDR environment map
 const rgbeLoader = new RGBELoader();
@@ -109,54 +109,54 @@ function animate() {
 
 animate();
 
-// // Add event listeners for click and hold functionality
-// const overlay = document.getElementById('overlay');
-// const finalExamText = document.getElementById('final-exam-text');
+// Add event listeners for click and hold functionality
+const overlay = document.getElementById('overlay');
+const finalExamText = document.getElementById('final-exam-text');
 
-// let flashInterval;
+let flashInterval;
 
-// function showOverlayAndText() {
-//   overlay.style.display = 'block';
-//   let isTextVisible = false;
+function showOverlayAndText() {
+  overlay.style.display = 'block';
+  let isTextVisible = false;
 
-//   // Flash the text on and off
-//   flashInterval = setInterval(() => {
-//     isTextVisible = !isTextVisible;
-//     finalExamText.style.display = isTextVisible ? 'block' : 'none';
-//   }, 500); // Flash every 500ms
-// }
+  // Flash the text on and off
+  flashInterval = setInterval(() => {
+    isTextVisible = !isTextVisible;
+    finalExamText.style.display = isTextVisible ? 'block' : 'none';
+  }, 500); // Flash every 500ms
+}
 
-// function hideOverlayAndText() {
-//   overlay.style.display = 'none';
-//   finalExamText.style.display = 'none';
-//   clearInterval(flashInterval); // Stop flashing
-// }
+function hideOverlayAndText() {
+  overlay.style.display = 'none';
+  finalExamText.style.display = 'none';
+  clearInterval(flashInterval); // Stop flashing
+}
 
-// // Update toggleOverlayAndText to include flashing text
-// function toggleOverlayAndText() {
-//   setInterval(() => {
-//     overlay.style.display = 'block';
-//     let isTextVisible = false;
+// Update toggleOverlayAndText to include flashing text
+function toggleOverlayAndText() {
+  setInterval(() => {
+    overlay.style.display = 'block';
+    let isTextVisible = false;
 
-//     // Flash the text on and off during the 3 seconds
-//     const flashInterval = setInterval(() => {
-//       isTextVisible = !isTextVisible;
-//       finalExamText.style.display = isTextVisible ? 'block' : 'none';
-//     }, 500); // Flash every 500ms
+    // Flash the text on and off during the 3 seconds
+    const flashInterval = setInterval(() => {
+      isTextVisible = !isTextVisible;
+      finalExamText.style.display = isTextVisible ? 'block' : 'none';
+    }, 500); // Flash every 500ms
 
-//     setTimeout(() => {
-//       overlay.style.display = 'none';
-//       finalExamText.style.display = 'none';
-//       clearInterval(flashInterval); // Stop flashing after 3 seconds
-//     }, 5000); // Hide after 3 seconds
-//   }, 7000); // Repeat every 15 seconds
-// }
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      finalExamText.style.display = 'none';
+      clearInterval(flashInterval); // Stop flashing after 3 seconds
+    }, 5000); // Hide after 3 seconds
+  }, 7000); // Repeat every 15 seconds
+}
 
-// // Start the toggle functionality
-// toggleOverlayAndText();
+// Start the toggle functionality
+toggleOverlayAndText();
 
-// // Add event listeners for mouse and touch events
-// document.addEventListener('mousedown', showOverlayAndText);
-// document.addEventListener('mouseup', hideOverlayAndText);
-// document.addEventListener('touchstart', showOverlayAndText);
-// document.addEventListener('touchend', hideOverlayAndText);
+// Add event listeners for mouse and touch events
+document.addEventListener('mousedown', showOverlayAndText);
+document.addEventListener('mouseup', hideOverlayAndText);
+document.addEventListener('touchstart', showOverlayAndText);
+document.addEventListener('touchend', hideOverlayAndText);
