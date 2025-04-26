@@ -149,7 +149,7 @@ function toggleOverlayAndText() {
       finalExamText.style.display = 'none';
       clearInterval(flashInterval); // Stop flashing after 3 seconds
     }, 5000); // Hide after 3 seconds
-  }, 7000); // Repeat every 15 seconds
+  }, 5000); // Repeat every 15 seconds
 }
 
 // Start the toggle functionality

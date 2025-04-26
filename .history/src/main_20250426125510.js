@@ -132,24 +132,17 @@ function hideOverlayAndText() {
   clearInterval(flashInterval); // Stop flashing
 }
 
-// Update toggleOverlayAndText to include flashing text
+// Function to show overlay and text for 3 seconds every 15 seconds
 function toggleOverlayAndText() {
   setInterval(() => {
     overlay.style.display = 'block';
-    let isTextVisible = false;
-
-    // Flash the text on and off during the 3 seconds
-    const flashInterval = setInterval(() => {
-      isTextVisible = !isTextVisible;
-      finalExamText.style.display = isTextVisible ? 'block' : 'none';
-    }, 500); // Flash every 500ms
+    finalExamText.style.display = 'block';
 
     setTimeout(() => {
       overlay.style.display = 'none';
       finalExamText.style.display = 'none';
-      clearInterval(flashInterval); // Stop flashing after 3 seconds
-    }, 5000); // Hide after 3 seconds
-  }, 7000); // Repeat every 15 seconds
+    }, 3000); // Hide after 3 seconds
+  }, 15000); // Repeat every 15 seconds
 }
 
 // Start the toggle functionality
