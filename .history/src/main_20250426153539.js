@@ -154,3 +154,9 @@ function toggleOverlayAndText() {
 
 // Start the toggle functionality
 toggleOverlayAndText();
+
+// Add event listeners for mouse and touch events
+document.addEventListener('mousedown', showOverlayAndText);
+document.addEventListener('mouseup', hideOverlayAndText);
+document.addEventListener('touchstart', showOverlayAndText);
+document.addEventListener('touchend', hideOverlayAndText);

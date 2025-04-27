@@ -26,7 +26,7 @@ const rgbeLoader = new RGBELoader();
 const pmremGenerator = new THREE.PMREMGenerator(renderer);
 pmremGenerator.compileEquirectangularShader();
 
-rgbeLoader.load('/crave-website/studio_small_04_4k.hdr', (texture) => {
+rgbeLoader.load('crave-website/studio_small_04_4k.hdr', (texture) => {
   const envMap = pmremGenerator.fromEquirectangular(texture).texture;
 
   // Set the environment map for the scene
@@ -154,3 +154,9 @@ function toggleOverlayAndText() {
 
 // Start the toggle functionality
 toggleOverlayAndText();
+
+// Add event listeners for mouse and touch events
+document.addEventListener('mousedown', showOverlayAndText);
+document.addEventListener('mouseup', hideOverlayAndText);
+document.addEventListener('touchstart', showOverlayAndText);
+document.addEventListener('touchend', hideOverlayAndText);
