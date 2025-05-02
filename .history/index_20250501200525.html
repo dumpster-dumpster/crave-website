@@ -50,7 +50,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         display: none; /* Hidden by default */
-        pointer-events: none; /* Allow clicks to pass through */
       }
 
       #overlay {
@@ -63,7 +62,6 @@
         mix-blend-mode: difference; /* Invert colors */
         z-index: 15;
         display: none; /* Hidden by default */
-        pointer-events: none; /* Allow clicks to pass through */
       }
 
       #song-request-form {
@@ -81,23 +79,18 @@
         padding: 10px;
         font-size: 16px;
         border: 2px solid green;
-        border-radius: 0; /* Remove rounded corners */
+        border-radius: 5px;
         background-color: black;
         color: green;
         margin-bottom: 10px;
         width: 300px;
       }
 
-      #song-request-input::placeholder {
-        font-family: 'IBM Plex Mono', monospace;
-      }
-
       #song-request-submit {
         padding: 10px 20px;
-        font-family: 'IBM Plex Mono', monospace;
         font-size: 16px;
         border: 2px solid green;
-        border-radius: 0px;
+        border-radius: 5px;
         background-color: green;
         color: black;
         cursor: pointer;
@@ -136,7 +129,7 @@
       <span>DON'T JUST STAND THERE</span>
     </div>
     <!-- Song Request Form -->
-    <form id="song-request-form" action="mailto:theethanwright@gmail.com" method="POST" enctype="text/plain">
+    <form id="song-request-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
       <input id="song-request-input" type="text" name="song" placeholder="Enter your song request" required />
       <button id="song-request-submit" type="submit">Submit</button>
     </form>
